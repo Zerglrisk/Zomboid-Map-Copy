@@ -35,16 +35,16 @@ namespace ZomboidMapCopy
         {
             if (string.IsNullOrEmpty(this.txtFrom.Text) || !File.Exists(Path.Combine(this.txtFrom.Text, "map_meta.bin")))
             {
-                MessageBox.Show("This Folder is not Save Folder");
+                MessageBox.Show("This Folder is not Save Folder", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(this.txtTo.Text))
             {
-                MessageBox.Show("Target Folder is Empty");
+                MessageBox.Show("Target Folder is Empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             CopySpecificFiles(this.txtFrom.Text, this.txtTo.Text, this.nudXFrom.Value, this.nudXTo.Value, this.nudYFrom.Value, this.nudYTo.Value);
-            MessageBox.Show("Jobs Done");
+            MessageBox.Show("Jobs Done", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void CopySpecificFiles(string sourceFolder, string targetFolder, decimal xFrom, decimal xTo, decimal yFrom, decimal yTo)
