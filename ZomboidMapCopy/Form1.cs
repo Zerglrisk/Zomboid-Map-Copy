@@ -42,6 +42,10 @@ namespace ZomboidMapCopy
             {
                 MessageBox.Show("Target Folder is Empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            if (!Directory.Exists(this.txtTo.Text))
+            {
+                Directory.CreateDirectory(this.txtTo.Text);
+            }
 
             CopySpecificFiles(this.txtFrom.Text, this.txtTo.Text, this.nudXFrom.Value, this.nudXTo.Value, this.nudYFrom.Value, this.nudYTo.Value);
             MessageBox.Show("Jobs Done", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
